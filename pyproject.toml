@@ -1,0 +1,38 @@
+[project]
+name = "yolov5m6-onnx-modifier"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "wep21", email = "daisuke.nishimatsu1021@gmail.com" }
+]
+dependencies = [
+    "onnx_graphsurgeon>=0.0.1.dev5",
+    "click>=8.1.7",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.0.287",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project.scripts]
+yolov5m6-onnx-modifier = 'yolov5m6_onnx_modifier.main:main'
+
+[tool.ruff]
+select = [
+    "F",  # Pyflakes
+    "E",  # pycodestyle error
+    "W",  # pycodestyle warning
+    "I",  # isort
+    "B",  # flake8-bugbear
+]
